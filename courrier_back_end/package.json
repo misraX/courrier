@@ -5,12 +5,17 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "prettier": "^1.15.3",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.4"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"**/*.{js,jsx}\""
   },
   "author": "misraX",
   "license": "MIT"
