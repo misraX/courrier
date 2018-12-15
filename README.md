@@ -1,4 +1,4 @@
-Travis CI stats [![Build Status](https://travis-ci.org/misraX/courrier.svg?branch=master)](https://travis-ci.org/misraX/courrier) [![codecov](https://codecov.io/gh/misraX/courrier/branch/master/graph/badge.svg)](https://codecov.io/gh/misraX/courrier)
+[![Build Status](https://travis-ci.org/misraX/courrier.svg?branch=master)](https://travis-ci.org/misraX/courrier) [![codecov](https://codecov.io/gh/misraX/courrier/branch/master/graph/badge.svg)](https://codecov.io/gh/misraX/courrier)
 
 ## Installation:
 
