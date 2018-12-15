@@ -3,8 +3,8 @@
     "username": "root",
     "password": "lollerskates",
     "database": "sequelize_test",
-    "host": "localhost",
-    "port": "8980",
+    "host": "db",
+    "port": "3306",
     "dialect": "mysql"
   },
   "test": {
