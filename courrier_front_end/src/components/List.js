@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
-
 import shortid from 'shortid';
+
 
 const head = {
   id: '#',
@@ -46,7 +46,7 @@ class List extends Component {
                       return (
                         <th key={shortid.generate()}>
                           {value[haedKey]}
-                          <Formik
+                          {/* <Formik
                             initialValues={{ status: 'completed' }}
                             onSubmit={(values, actions) => {
                               setTimeout(() => {
@@ -77,7 +77,7 @@ class List extends Component {
                                 <button type="submit">Submit</button>
                               </Form>
                             )}
-                          />
+                          /> */}
                         </th>
                       );
                     }

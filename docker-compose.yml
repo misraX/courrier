@@ -11,6 +11,16 @@ services:
       - ./courrier_back_end:/srv/api:rw
     ports:
      - "9000:9000"
+
+  client:
+    build:
+      context: ./courrier_front_end
+      dockerfile: Dockerfile
+    volumes:
+      - ./courrier_front_end:/srv/api:rw
+    ports:
+     - "3000:3000"
+
   db:
     image: mysql:5.7
     environment:
@@ -20,5 +30,3 @@ services:
       MYSQL_PASSWORD: sequelize_test
     volumes:
       - /mnt/sequelize-db-ramdisk:/var/lib/mysql
-    ports:
-      - "8980:3306"
