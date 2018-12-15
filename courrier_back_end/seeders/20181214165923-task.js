@@ -15,7 +15,7 @@ module.exports = {
           courier: 'FastWay',
           description: 'Deliver a credit card, user must sign',
           status: 'completed',
-          driverComment: ''
+          driverComment: ""
         },
         {
           fromLocation: '25.191099, 55.283402',
@@ -27,7 +27,7 @@ module.exports = {
           courier: 'Wimo',
           description: 'Deliver a bank statement',
           status: 'completed',
-          driverComment: ''
+          driverComment: ""
         },
         {
           fromLocation: '25.194594, 55.274034',
@@ -39,7 +39,7 @@ module.exports = {
           courier: 'FastWay',
           description: 'Deliver souq.com order',
           status: 'completed',
-          driverComment: ''
+          driverComment: ""
         },
         {
           fromLocation: '25.166517, 55.278027',
@@ -51,7 +51,7 @@ module.exports = {
           courier: 'Wimo',
           description: 'Grocery Delivery',
           status: 'failed',
-          driverComment: "Can't reach the customer, customer not answering calls"
+          driverComment: ""
         },
         {
           fromLocation: '25.166517, 55.278027',
@@ -63,7 +63,7 @@ module.exports = {
           courier: 'FastWay',
           description: 'Deliver a credit card, user must sign',
           status: 'completed',
-          driverComment: ''
+          driverComment: ""
         },
         {
           fromLocation: '25.166051, 55.271847',
@@ -75,7 +75,7 @@ module.exports = {
           courier: 'Wimo',
           description: 'Deliver noon.com shipping',
           status: 'completed',
-          driverComment: ''
+          driverComment: ""
         },
         {
           fromLocation: '25.194594, 55.274034',
@@ -87,43 +87,43 @@ module.exports = {
           courier: 'Wimo',
           description: 'Deliver a document shipping',
           status: 'completed',
-          driverComment: ''
+          driverComment: ""
         },
         {
           fromLocation: '25.089240, 55.211242',
           toLocation: '25.138623, 55.231355',
           deliveryDate: '2019-05-22 03:36:08',
-          startedAt: '',
-          finishedAt: '',
+          startedAt: null,
+          finishedAt: null,
           driverName: 'Nazih Omar',
           courier: 'FastWay',
           description: 'Deliver emirates ID',
           status: 'pending',
-          driverComment: ''
+          driverComment: ""
         },
         {
           fromLocation: '25.166051, 55.271847',
           toLocation: '25.127795, 55.226619',
           deliveryDate: '2019-05-12 03:36:08',
           startedAt: '2019-05-12 13:06:08',
-          finishedAt: '',
+          finishedAt: null,
           driverName: 'Marko Pandres',
           courier: 'FastWay',
           description: 'Deliver emirates ID',
           status: 'started',
-          driverComment: ''
+          driverComment: ""
         },
         {
           fromLocation: '25.194594, 55.274034',
           toLocation: '25.125386, 55.227821',
           deliveryDate: '2019-05-25 03:36:08',
-          startedAt: '',
-          finishedAt: '',
+          startedAt: null,
+          finishedAt: null,
           driverName: 'Adam Aldo',
           courier: 'Wimo',
           description: 'Deliver a souq.com shipping',
           status: 'pending',
-          driverComment: ''
+          driverComment: ""
         }
       ],
       {}

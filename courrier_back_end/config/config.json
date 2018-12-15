@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "sqlite",
-    "storage": "./app_data.sqlite"
+    "password": "lollerskates",
+    "database": "sequelize_test",
+    "host": "localhost",
+    "port": "8980",
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

@@ -12,7 +12,7 @@ router.get('/tasks', (req, res) => {
   let dbQuery;
   let queryString = req.query;
   // FindAll with orders.
-  if (queryString) {
+  if (Object.keys(queryString).length > 0) {
     let orderQueryString = queryString['order'];
     let sortQueryString = queryString['sort'];
     if (orderQueryString && sortQueryString) console.log('Order By :', orderQueryString, 'Sort By :', sortQueryString);
