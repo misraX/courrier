@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "lollerskates",
+    "password": "dbda",
     "database": "sequelize_test",
     "host": "db",
     "port": "3306",
@@ -17,10 +17,10 @@
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "sqlite",
-    "storage": "./app_data.sqlite"
+    "password": "dbda",
+    "database": "sequelize",
+    "host": "db",
+    "port": "3306",
+    "dialect": "mysql"
   }
 }
