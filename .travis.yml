@@ -16,8 +16,8 @@ notifications:
 
 install:
   - npm install -g npm@6.0 yarn codecov.io
-  - cd courrier_back_end && yarn
 
 # command to run tests
 script:
-  - yarn test && yarn coverage
+  - cd courrier_back_end && yarn && yarn test && yarn coverage
+  - cd ../courrier_front_end && yarn && yarn test
