@@ -11,15 +11,30 @@ const ERRORMSG = { error: 'Not Found.' };
 // ListView for tasks.
 app.get('/tasks', (req, res) => {
   let Tasks = db.Task;
-  let query = Tasks.findAll();
-  query.then(tasks => res.json({ tasks: [...tasks] })).catch(e => res.status(404).json(ERRORMSG));
+  // order=DESC&sort=total_spent
+  // {order: [['deliveryDate', 'DESC']]}
+  let dbQuery;
+  let queryString = req.query;
+  // FindAll with orders.
+  if (queryString) {
+    let orderQueryString = queryString['order'];
+    let sortQueryString = queryString['sort'];
+    if (orderQueryString && sortQueryString) console.log('Order By :', orderQueryString, 'Sort By :', sortQueryString);
+    dbQuery = Tasks.findAll({
+      order: [[sortQueryString, orderQueryString]]
+    });
+  } else {
+    // regular query.
+    dbQuery = Tasks.findAll();
+  }
+  dbQuery.then(tasks => res.json({ tasks: [...tasks] })).catch(e => res.status(404).json(ERRORMSG));
 });
 
 // DetailsView for tasks.
 app.get('/tasks/:id', (req, res) => {
   let Tasks = db.Task;
-  let query = Tasks.findByPk(req.params.id);
-  query
+  let dbQuery = Tasks.findByPk(req.params.id);
+  dbQuery
     .then(task => (task ? res.json(task) : res.status(404).json(ERRORMSG)))
     .catch(e => res.status(404).json(ERRORMSG));
 });
@@ -27,8 +42,8 @@ app.get('/tasks/:id', (req, res) => {
 // UpdateView for tasks.
 app.put('/tasks/:id', (req, res) => {
   let Tasks = db.Task;
-  let query = Tasks.findByPk(req.params.id);
-  query
+  let dbQuery = Tasks.findByPk(req.params.id);
+  dbQuery
     .then(task => {
       if (!task) {
         throw ERRORMSG;
