@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       deliveryDate: {
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       startedAt: {
         type: Sequelize.DATE
@@ -37,14 +37,6 @@ module.exports = {
       },
       driverComment: {
         type: Sequelize.TEXT
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
       }
     });
   },

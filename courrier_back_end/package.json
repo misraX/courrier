@@ -4,16 +4,24 @@
   "description": "Corrrier app.",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
+    "moment": "^2.23.0",
     "mysql": "^2.16.0",
+    "mysql2": "^1.6.4",
     "prettier": "^1.15.3",
     "sequelize": "^4.42.0",
     "sequelize-cli": "^5.4.0",
     "sqlite3": "^4.0.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.2.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --recursive \"**/*.spec.js\"",
     "start": "node server.js",
     "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"**/*.{js,jsx}\""
   },
