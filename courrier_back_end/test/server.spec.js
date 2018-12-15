@@ -34,6 +34,27 @@ describe('Tasks endpoints testing..', () => {
     });
   });
 
+  it('should GET 200 on ListView /tasks Tasks with orders...', done => {
+    // create a new task instance.
+    this.models.Task.create({
+      fromLocation: '25.204849,55.270783',
+      toLocation: '25.125386, 55.227821',
+      deliveryDate: '2019-05-10 03:36:08',
+      startedAt: '2019-05-10 01:36:08',
+      finishedAt: '2019-05-10 01:56:09',
+      driverName: 'Marko Pandres',
+      courier: 'FastWay',
+      description: 'Deliver a credit card, user must sign',
+      status: 'completed',
+      driverComment: ''
+    }).then(() => {
+      request(app)
+        .get('/tasks?order=DESC&sort=deliveryDate')
+        .expect(200);
+      done();
+    });
+  });
+
   it('should GET 200 on DetailsView /tasks/:id Tasks...', done => {
     // create a new task instance.
     this.models.Task.create({
