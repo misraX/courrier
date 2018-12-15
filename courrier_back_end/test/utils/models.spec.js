@@ -3,7 +3,7 @@ const expect = chai.expect;
 const getDate = require('../../utils/models').getDate;
 const validDate = require('../../utils/models').validDate;
 
-describe('Models utils testing...', () => {
+describe('utils models unit testing...', () => {
   let date = '2018-12-14T22:44:07.117Z';
 
   it('should return a formated date.', () => {
