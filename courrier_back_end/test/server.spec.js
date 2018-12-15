@@ -29,8 +29,7 @@ describe('Tasks endpoints testing..', () => {
     }).then(() => {
       request(app)
         .get('/tasks')
-        .expect(200);
-      done();
+        .expect(200, done);
     });
   });
 
@@ -50,8 +49,7 @@ describe('Tasks endpoints testing..', () => {
     }).then(() => {
       request(app)
         .get('/tasks?order=DESC&sort=deliveryDate')
-        .expect(200);
-      done();
+        .expect(200, done);
     });
   });
 
@@ -72,8 +70,7 @@ describe('Tasks endpoints testing..', () => {
       let id = task.get()['id'];
       request(app)
         .get(`/tasks/${id}`)
-        .expect(200);
-      done();
+        .expect(200, done);
     });
   });
 
