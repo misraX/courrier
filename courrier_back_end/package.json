@@ -22,7 +22,7 @@
     "supertest": "^3.3.0"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha --recursive \"**/*.spec.js\"",
+    "test": "NODE_ENV=test mocha --exit --recursive \"**/*.spec.js\"",
     "start": "nodemon --inspect index.js",
     "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"**/*.{js,jsx}\""
   },
