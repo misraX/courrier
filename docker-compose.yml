@@ -14,7 +14,7 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: lollerskates
+      MYSQL_ROOT_PASSWORD: dbda
       MYSQL_DATABASE: sequelize_test
       MYSQL_USER: sequelize_test
       MYSQL_PASSWORD: sequelize_test
@@ -22,6 +22,3 @@ services:
       - /mnt/sequelize-db-ramdisk:/var/lib/mysql
     ports:
       - "8980:3306"
-
-volumes:
-  db-data: {}
