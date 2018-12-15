@@ -19,11 +19,12 @@
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.9",
-    "sinon": "^7.2.2"
+    "sinon": "^7.2.2",
+    "supertest": "^3.3.0"
   },
   "scripts": {
-    "test": "mocha --recursive \"**/*.spec.js\"",
-    "start": "nodemon --inspect server.js",
+    "test": "NODE_ENV=test mocha --recursive \"**/*.spec.js\"",
+    "start": "nodemon --inspect index.js",
     "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"**/*.{js,jsx}\""
   },
   "author": "misraX",

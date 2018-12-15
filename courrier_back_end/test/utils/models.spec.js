@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
-const getDate = require('./models').getDate;
-const validDate = require('./models').validDate;
+const getDate = require('../../utils/models').getDate;
+const validDate = require('../../utils/models').validDate;
 
 describe('Models utils testing...', () => {
   let date = '2018-12-14T22:44:07.117Z';
