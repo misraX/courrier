@@ -36,3 +36,4 @@ CodeCoverage: [![codecov](https://codecov.io/gh/misraX/courrier/branch/master/gr
 1. [mocha](https://github.com/mochajs/mocha "mocha") The JavaScript test framework.
 2. [chai](https://github.com/chaijs/chai "chai") chai expect.
 3. [supertest](https://github.com/visionmedia/supertest "supertest") Super-agent driven library for testing node.js HTTP servers using a fluent API.
+4. [jest](https://jestjs.io/ "jest") For React.
