@@ -23,11 +23,13 @@ GET `http://localhost:9000/tasks/:id` Task by id.
 
 PUT `http://localhost:9000/tasks/:id` {status: 'completed|failed'} on pending status.
 
+ReactJS app: `http://localhost:3000`
+
 ### Test:
 
 Packages used for test:
 
-Travis Continuous Integration: [Travis CI](https://travis-ci.org/misraX/courrier)
+Travis Continuous Integration: [![Build Status](https://travis-ci.org/misraX/courrier.svg?branch=master)](https://travis-ci.org/misraX/courrier)
 
 CodeCoverage: [![codecov](https://codecov.io/gh/misraX/courrier/branch/master/graph/badge.svg)](https://codecov.io/gh/misraX/courrier)
 
