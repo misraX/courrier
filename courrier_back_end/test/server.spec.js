@@ -13,16 +13,6 @@ describe('Tasks endpoints testing..', () => {
     // return Promise.all([this.models.Task.destroy({ truncate: true })]);
   });
 
-  it("should throw 404 {error: 'Not Found'}...", () => {
-    // No data found
-    request(app)
-      .get('/tasks')
-      .expect(404)
-      .end((err, res) => {
-        expect(res.body).to.deep.equal({ error: 'Not Found.' });
-      });
-  });
-
   it('should GET 200 on ListView /tasks Tasks...', done => {
     // create a new task instance.
     this.models.Task.create({
