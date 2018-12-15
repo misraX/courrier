@@ -1,4 +1,4 @@
-Travis CI stats [![Build Status](https://travis-ci.org/misraX/courrier.svg?branch=master)](https://travis-ci.org/misraX/courrier)
+Travis CI stats [![Build Status](https://travis-ci.org/misraX/courrier.svg?branch=master)](https://travis-ci.org/misraX/courrier) [![codecov](https://codecov.io/gh/misraX/courrier/branch/master/graph/badge.svg)](https://codecov.io/gh/misraX/courrier)
 
 ## Installation:
 
@@ -28,6 +28,8 @@ PUT `http://localhost:9000/tasks/:id` {status: 'completed|failed'} on pending st
 Packages used for test:
 
 Travis Continuous Integration: [Travis CI](https://travis-ci.org/misraX/courrier)
+
+CodeCoverage: [![codecov](https://codecov.io/gh/misraX/courrier/branch/master/graph/badge.svg)](https://codecov.io/gh/misraX/courrier)
 
 1. [mocha](https://github.com/mochajs/mocha "mocha") The JavaScript test framework.
 2. [chai](https://github.com/chaijs/chai "chai") chai expect.

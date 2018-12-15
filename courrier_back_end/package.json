@@ -19,10 +19,12 @@
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.9",
+    "nyc": "^13.1.0",
     "supertest": "^3.3.0"
   },
   "scripts": {
-    "test": "NODE_ENV=test mocha --exit --recursive \"**/*.spec.js\"",
+    "test": "NODE_ENV=test nyc --reporter=lcov --reporter=text-lcov mocha --exit --recursive \"**/*.spec.js\"",
+    "coverage": "cat ./coverage/lcov.info | codecov",
     "start": "nodemon --inspect index.js",
     "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"**/*.{js,jsx}\""
   },
