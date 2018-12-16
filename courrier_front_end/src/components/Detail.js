@@ -1,6 +1,7 @@
 import React from 'react';
 import shortid from 'shortid';
 import axios from 'axios';
+import { head } from '../utils/utils';
 
 /**
  * DetailView.
@@ -26,11 +27,10 @@ class Detail extends React.Component {
 
   render() {
     const { task, isLoading } = this.state;
-    // console.log(task)
     return isLoading ? (
       <p>Loading...</p>
     ) : task ? (
-      Object.values(task).map((value, index) => <p key={shortid.generate()}>{value}</p>)
+      Object.keys(head).map((value, index) => (task[value] ? <p key={shortid.generate()}>{task[value]}</p> : null))
     ) : (
       <p>No data.</p>
     );
