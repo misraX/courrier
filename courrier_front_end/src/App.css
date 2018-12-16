@@ -29,3 +29,25 @@
     transform: rotate(360deg);
   }
 }
+.detail{
+  display: inline-block;
+  width: 100%;
+}
+.searchbox{
+  width: 100%
+}
+.toolbox{
+  padding: 20px 0
+}
+.detail p{
+  display: inherit;
+  padding: 0 10px
+}
+.list-head{
+  cursor: pointer;
+}
+.task-title{
+  margin: 10px 10px 0;
+  text-align: center;
+  font-weight: 600;
+}
