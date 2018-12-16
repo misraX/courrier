@@ -1,7 +1,8 @@
 import React from 'react';
 import shortid from 'shortid';
 import axios from 'axios';
-import { head } from '../utils/utils';
+import { detailHead, splitLocation } from '../utils/utils';
+import MapDetail from './MapDetail';
 
 /**
  * DetailView.
@@ -30,7 +31,15 @@ class Detail extends React.Component {
     return isLoading ? (
       <p>Loading...</p>
     ) : task ? (
-      Object.keys(head).map((value, index) => (task[value] ? <p key={shortid.generate()}>{task[value]}</p> : null))
+      Object.keys(detailHead).map((value, index) =>
+        task[value] ? (
+          value !== 'fromLocation' ? (
+            <p key={shortid.generate()}>{task[value]}</p>
+          ) : (
+            <MapDetail name="" initialCenter={splitLocation(task[value])} />
+          )
+        ) : null
+      )
     ) : (
       <p>No data.</p>
     );

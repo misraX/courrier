@@ -3,7 +3,7 @@ import { Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import shortid from 'shortid';
-import { head } from '../utils/utils';
+import { listHead } from '../utils/utils';
 
 /**
  * ListView.
@@ -32,7 +32,7 @@ class List extends React.Component {
       <Table hover>
         <thead className="thead-dark">
           <tr>
-            {Object.values(head).map((value, index) => (
+            {Object.values(listHead).map((value, index) => (
               <th key={shortid.generate()}>{value}</th>
             ))}
           </tr>
@@ -45,7 +45,7 @@ class List extends React.Component {
           ) : tasks ? (
             tasks.map((value, index) => (
               <tr key={shortid.generate()}>
-                {Object.keys(head).map(haedKey => (
+                {Object.keys(listHead).map(haedKey => (
                   <th key={shortid.generate()}>
                     {haedKey === 'id' && value[haedKey] ? (
                       <Link to={`/tasks/${value[haedKey]}`}>{value[haedKey]}</Link>
