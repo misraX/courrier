@@ -40,7 +40,7 @@ Detail:
 
 `http://localhost:3000/tasks/:id` Task by id (updating status only on pending status), instant view update without refreshing.
 
-On pending status there will be a simple form using `formik` to update `PUT` the api `/tasks/:id` with "completed|failed" status.
+A simple detail view with google maps with a mark to fromLoc and on pending status there will be a simple form using `formik` to update `PUT` the api `/tasks/:id` with "completed|failed" status.
 
 ### Test:
 

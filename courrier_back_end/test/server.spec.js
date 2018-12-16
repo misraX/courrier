@@ -92,10 +92,9 @@ describe('Tasks endpoints testing..', () => {
       request(app)
         .put(`/tasks/${id}`)
         .send({ status: 'completed' })
-        .expect(200)
         .end((err, res) => {
           expect(res.body.status).to.equal('completed');
-          done();
+          done()
         });
     });
   });
