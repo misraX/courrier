@@ -2,9 +2,8 @@
 
 ## Installation:
 
-For the first time use `docker-compose` with `--build` to build the containers from images.
 
-`docker-compose up`
+`docker-compose up`  For the first time use `--build` to build the containers.
 
 Run model migrations :
 
@@ -14,8 +13,14 @@ Run model seed data:
 
 `docker-compose exec api bash -c "./node_modules/.bin/sequelize db:seed:all"`
 
+## Docker containers:
+- db (mysql).
+- client (ReactJS) port 3000
+- api (ExpressJS) port 9000
 
 ## Available endpoints:
+
+ExpressJS app:
 
 GET `http://localhost:9000/tasks` List all Tasks.
 
@@ -23,15 +28,27 @@ GET `http://localhost:9000/tasks/:id` Task by id.
 
 PUT `http://localhost:9000/tasks/:id` {status: 'completed|failed'} on pending status.
 
-ReactJS app: `http://localhost:3000`
+ReactJS app: a simple app without using redux. 
+
+List:
+
+`http://localhost:3000` List all Tasks, simple table with dynamic sorting options for ASC & DESC ordering and searching.
+
+To sort the table: click on the table head it will dynamicly sort based on the head value and on the api sorting response `<th>`
+
+Detail:
+
+`http://localhost:3000/tasks/:id` Task by id (updating status only on pending status), instant view update without refreshing.
+
+On pending status there will be a simple form using `formik` to update `PUT` the api `/tasks/:id` with "completed|failed" status.
 
 ### Test:
 
 Packages used for test:
 
-Travis Continuous Integration: [![Build Status](https://travis-ci.org/misraX/courrier.svg?branch=master)](https://travis-ci.org/misraX/courrier)
+Travis Continuous Integration for both front and back: [![Build Status](https://travis-ci.org/misraX/courrier.svg?branch=master)](https://travis-ci.org/misraX/courrier)
 
-CodeCoverage: [![codecov](https://codecov.io/gh/misraX/courrier/branch/master/graph/badge.svg)](https://codecov.io/gh/misraX/courrier)
+Code Coverage mainly for the backend code: [![codecov](https://codecov.io/gh/misraX/courrier/branch/master/graph/badge.svg)](https://codecov.io/gh/misraX/courrier)
 
 1. [mocha](https://github.com/mochajs/mocha "mocha") The JavaScript test framework.
 2. [chai](https://github.com/chaijs/chai "chai") chai expect.
