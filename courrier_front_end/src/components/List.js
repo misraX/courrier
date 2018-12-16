@@ -1,7 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 import { Link } from 'react-router-dom';
-// import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
 import shortid from 'shortid';
 
@@ -16,6 +15,12 @@ const head = {
   driverComment: 'Driver comment'
 };
 
+/**
+ * ListView.
+ *
+ * @class List
+ * @extends {React.Component}
+ */
 class List extends React.Component {
   state = {
     tasks: [],

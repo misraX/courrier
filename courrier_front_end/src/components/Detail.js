@@ -2,6 +2,12 @@ import React from 'react';
 import shortid from 'shortid';
 import axios from 'axios';
 
+/**
+ * DetailView.
+ *
+ * @class Detail
+ * @extends {React.Component}
+ */
 class Detail extends React.Component {
   state = {
     task: {},
