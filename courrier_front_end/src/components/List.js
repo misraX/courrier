@@ -22,10 +22,13 @@ class List extends React.Component {
     isLoading: false
   };
   componentDidMount = () => {
-    this.setState({isLoading: true})
-    axios.get('http://localhost:9000/tasks').then(res => {
-      this.setState({ tasks: [...this.state.tasks, ...res.data['tasks']], isLoading: false });
-    }).catch(err=>this.setState({err}));
+    this.setState({ isLoading: true });
+    axios
+      .get('http://localhost:9000/tasks')
+      .then(res => {
+        this.setState({ tasks: [...this.state.tasks, ...res.data['tasks']], isLoading: false });
+      })
+      .catch(err => this.setState({ err }));
   };
 
   render() {
@@ -40,21 +43,25 @@ class List extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {isLoading ? <p>Loading...</p> : tasks
-            ? tasks.map((value, index) => (
-                <tr key={shortid.generate()}>
-                  {Object.keys(head).map(haedKey => (
-                    <th key={shortid.generate()}>
-                      {haedKey === 'id' && value[haedKey] ? (
-                        <Link to={`/tasks/${value[haedKey]}`}>{value[haedKey]}</Link>
-                      ) : (
-                        value[haedKey]
-                      )}
-                    </th>
-                  ))}
-                </tr>
-              ))
-            : null}
+          {isLoading ? (
+            <tr>
+              <td>Loading...</td>
+            </tr>
+          ) : tasks ? (
+            tasks.map((value, index) => (
+              <tr key={shortid.generate()}>
+                {Object.keys(head).map(haedKey => (
+                  <th key={shortid.generate()}>
+                    {haedKey === 'id' && value[haedKey] ? (
+                      <Link to={`/tasks/${value[haedKey]}`}>{value[haedKey]}</Link>
+                    ) : (
+                      value[haedKey]
+                    )}
+                  </th>
+                ))}
+              </tr>
+            ))
+          ) : null}
         </tbody>
       </Table>
     );
