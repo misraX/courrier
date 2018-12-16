@@ -2,13 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const tasksRoutes = require('./routes/tasks');
 const cors = require('cors');
-const corsOptions = require('./utils/corsOptions')
 // app
 const app = express();
 // CORS
-if(process.env.NODE_ENV !== 'test'){
-    app.use(cors(corsOptions));
-}
+app.use(cors());
 // bodyparser
 app.use(bodyParser.json());
 

@@ -14,6 +14,7 @@ import { listHead } from '../utils/utils';
 class List extends React.Component {
   state = {
     tasks: [],
+    searchedTask: [],
     isLoading: false,
     order: 'DESC'
   };
@@ -36,11 +37,52 @@ class List extends React.Component {
       })
       .catch(err => this.setState({ err }));
   };
+  /**
+   * Toggle ordering.
+   *
+   * @memberof List
+   */
   toggleOder = () => {
     this.setState({ order: this.state.order === 'DESC' ? 'ASC' : 'DESC' });
   };
+
+  /**
+   * Searching for Driver Name, Courrier, Status.
+   *
+   * @memberof List
+   */
+  search = e => {
+    const { tasks } = this.state;
+    let searchedTask = [];
+    if (tasks && e.target.value) {
+      searchedTask = tasks.filter(task => {
+        let searchStaus = String(task.status).includes(e.target.value);
+        let searchDriveName = String(task.driverName).includes(e.target.value);
+        let searchCourier = String(task.courier).includes(e.target.value);
+        if (searchStaus) {
+          return searchStaus;
+        }
+        if (searchDriveName) {
+          return searchDriveName;
+        }
+        if (searchCourier) {
+          return searchCourier;
+        }
+      });
+      this.setState({ searchedTask });
+      return;
+    } else {
+      searchedTask = [];
+      this.setState({ searchedTask });
+    }
+    console.log(searchedTask);
+  };
   render() {
-    const { tasks, isLoading } = this.state;
+    const { isLoading, searchedTask } = this.state;
+    let { tasks } = this.state;
+    if (searchedTask.length > 0) {
+      tasks = searchedTask;
+    }
     return (
       <Container>
         <h1 className="task-title">Tasks list</h1>
@@ -57,6 +99,7 @@ class List extends React.Component {
                 name="search"
                 className="searchbox"
                 placeholder="Search: Driver Name or Courrier or Status"
+                onChange={this.search}
               />
             </div>
           </Col>
