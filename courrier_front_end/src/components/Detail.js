@@ -3,6 +3,7 @@ import shortid from 'shortid';
 import axios from 'axios';
 import { detailHead, splitLocation } from '../utils/utils';
 import MapDetail from './MapDetail';
+import StatusForm from './StatusForm';
 
 /**
  * DetailView.
@@ -26,6 +27,10 @@ class Detail extends React.Component {
       .catch(err => this.setState({ err, isLoading: false }));
   };
 
+  updateTask = task => {
+    console.log(task);
+    this.setState({ task: task });
+  };
   render() {
     const { task, isLoading } = this.state;
     return isLoading ? (
@@ -37,6 +42,9 @@ class Detail extends React.Component {
             <div className="detail">
               <p>{detailHead[value]}:</p>
               <p key={shortid.generate()}>{task[value]}</p>
+              {value === 'status' && task[value] === 'pending' ? (
+                <StatusForm updateData={this.updateTask} data={task} />
+              ) : null}
             </div>
           ) : (
             <MapDetail name="" initialCenter={splitLocation(task[value])} />
