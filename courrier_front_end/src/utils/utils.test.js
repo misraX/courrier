@@ -14,9 +14,9 @@ describe('utils testing', () => {
     });
   });
   it('should return langitued and latitue of the give location.', () => {
-    expect(splitLocation("25.191099, 55.283402")).toEqual({
-      lat: "25.191099",
-      lng: "55.283402"
-    })
+    expect(splitLocation('25.191099, 55.283402')).toEqual({
+      lat: '25.191099',
+      lng: '55.283402'
+    });
   });
 });

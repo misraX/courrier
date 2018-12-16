@@ -21,6 +21,8 @@ export const detailHead = {
 };
 
 export const splitLocation = location => {
-  let lngLat = String(location).replace(" ","").split(',');
+  let lngLat = String(location)
+    .replace(' ', '')
+    .split(',');
   return { lat: lngLat[0], lng: lngLat[1] };
 };

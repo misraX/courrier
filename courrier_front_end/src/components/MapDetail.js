@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { GoogleApiWrapper, InfoWindow, Marker, Map } from 'google-maps-react';
 const mapStyles = {
   width: '500px',
-  height: '500px'
+  height: '500px',
+  padding: '0 10px'
 };
 /**
  * Google map.

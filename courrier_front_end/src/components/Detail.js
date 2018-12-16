@@ -34,7 +34,10 @@ class Detail extends React.Component {
       Object.keys(detailHead).map((value, index) =>
         task[value] ? (
           value !== 'fromLocation' ? (
-            <p key={shortid.generate()}>{task[value]}</p>
+            <div className="detail">
+              <p>{detailHead[value]}:</p>
+              <p key={shortid.generate()}>{task[value]}</p>
+            </div>
           ) : (
             <MapDetail name="" initialCenter={splitLocation(task[value])} />
           )

@@ -29,3 +29,11 @@
     transform: rotate(360deg);
   }
 }
+.detail{
+  display: inline-block;
+  width: 100%;
+}
+.detail p{
+  display: inherit;
+  padding: 0 10px
+}
