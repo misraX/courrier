@@ -6,7 +6,9 @@ const corsOptions = require('./utils/corsOptions')
 // app
 const app = express();
 // CORS
-app.use(cors(corsOptions));
+if(process.env.NODE_ENV !== 'test'){
+    app.use(cors(corsOptions));
+}
 // bodyparser
 app.use(bodyParser.json());
 
