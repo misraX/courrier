@@ -9,6 +9,7 @@ services:
      - db
     volumes:
       - ./courrier_back_end:/srv/api:rw
+      - /srv/api/node_modules
     ports:
      - "9000:9000"
 
@@ -18,6 +19,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./courrier_front_end:/srv/api:rw
+      - /srv/api/node_modules
     ports:
      - "3000:3000"
 
